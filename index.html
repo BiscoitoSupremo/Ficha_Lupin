@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caça ao Lupin — Ficha de Agente</title>
+<meta name="description" content="Ficha de agente interativa do RPG Caça ao Lupin, com cálculos automáticos, árvores de upgrade e rolador de dados.">
+<meta name="theme-color" content="#14110d">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Oswald:wght@500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand" aria-label="Caça ao Lupin">
+      <span class="brand-1">Caça ao Lupin</span>
+      <span class="brand-2">Ficha de Agente</span>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Seções da ficha"></nav>
+  </header>
+
+  <div class="stage">
+    <aside class="side" id="side" aria-label="Subseções"></aside>
+
+    <main class="book">
+      <div class="cover">
+        <div class="spread">
+          <section class="page left" id="pageL" aria-label="Retrato e vitais"></section>
+          <div class="gutter" aria-hidden="true">
+            <div class="ribbon"><i></i></div>
+          </div>
+          <section class="page right" id="pageR" aria-live="polite"></section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="hints" aria-hidden="true">
+    <span><kbd>Q</kbd><kbd>E</kbd> Trocar aba</span>
+    <span><kbd>◀</kbd><kbd>▶</kbd> Virar página</span>
+    <span class="status" id="status">Salvo neste aparelho</span>
+  </footer>
+</div>
+
+<div id="printSheet" class="print-sheet"></div>
+<div id="tip" class="tip" role="tooltip"></div>
+<div id="toast" class="toast" role="status"></div>
+<input type="file" id="fileImport" accept="application/json,.json" hidden>
+<input type="file" id="filePortrait" accept="image/*" hidden>
+
+<noscript><p style="color:#e8dfc7;padding:2rem">Esta ficha precisa de JavaScript para calcular os valores.</p></noscript>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
